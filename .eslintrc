@@ -11,7 +11,8 @@
             "jsx": true
         },
         "sourceType": "module",
-        "allowImportExportEverywhere": true
+        "allowImportExportEverywhere": true 
+// ** the above line does not mean to introduce a concept of importing? l'm only ambitious on text based per an actual product appearance, given the anticipation is chatroom focused across topic education ** //
     },
     "rules": {
         "no-const-assign": "warn",
