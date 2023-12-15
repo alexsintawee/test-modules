@@ -1,5 +1,7 @@
 function LayoutModule() {
-  console.log(' Layout ...')
+  console.log('test >>> ')
+
+ 
 }
 
 export {
