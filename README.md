@@ -9,3 +9,5 @@ https://webpack.js.org/guides/getting-started/
 ```npm install webpack webpack-cli --save-dev```
 
 ```$ npx webpack --config webpack.config.js```
+
+TomProject
