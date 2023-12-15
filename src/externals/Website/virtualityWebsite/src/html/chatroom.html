@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topic Chatroom</title>
+  <link rel="stylesheet" href="chatroom.css">
+  <link rel="stylesheet" href="chat_style.css">
+  <link rel="stylesheet" href="chat_history.css">
+  <script src="chatroom.js"></script>
+  <script src="server.js"></script>
+  <script src="word_prevention.js"></script>
+</head>
+<body class="web">
+  <div class="chat-container">
+    <div id="chat-history" class="chat-history">
+
+    </div>
+    <form id="chat-form">
+      <div class="chat-container">
+        <br>
+        <textarea id="chat-input" placeholder="Type your message here" required autocomplete="off" rows="5" maxLength="300" oncut="return false;" onpaste="return false" autofocus></textarea>
+          <input type="submit" id="send-message" value="Send">
+        <div class="toggle-container">
+          <input type="checkbox" id="enter-toggle">
+          <label for="enter-toggle">Press Enter to Send</label>
+        </div>
+      </div>
+    </form>
+
+    <div id="chat-output"></div>
+
+    <div id="notification" style="display: none; color: red; font-weight: bold;">Message is offensive and should be rejected.</div>
+    
+  <script>
+  const socket = io();
+
+  socket.on('connect', () => {
+    console.log('Connected to Server');
+  }); // <-- Missing closing parenthesis
+
+  function checkMessageSafety() {
+    var message = document.getElementById("chat-input").value;
+    if (isSafeMessage(message)) {
+      return true; // Submit the form
+    } else {
+      document.getElementById("notification").style.display = "block";
+      return false; // Prevent form submission
+    }
+  }
+
+  function isSafeMessage(message) {
+    // Define a list of offensive words
+    var offensiveWords = ["fuck"]; // Add more words as needed
+
+    // Convert the message to lowercase for case-insensitive matching
+    message = message.toLowerCase();
+
+    // Check if the message contains any offensive words
+    for (var i = 0; i < offensiveWords.length; i++) {
+      if (message.includes(offensiveWords[i])) {
+        return false; // Unsafe message
+      }
+    }
+
+    return true; // Safe message
+  }
+</script>
+<!-- End of offensive word check integration -->
+</div>
+
+<footer>
+  <div class="container">
+    <a href="/Users/tomcasey/Documents/Coding/Website/Random/random_topic_generator.html" class="back-button">Back to Topic Selection</a>
+    <p>&copy; 2023 Virtuality - Thomas Casey (All Rights Reserved)</p>
+  </div>
+</footer>
+</body>
+</html>

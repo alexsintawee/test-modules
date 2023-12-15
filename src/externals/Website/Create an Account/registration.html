@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="registration.css">
+    <script src="registration.js"></script>
+    <script src="if_same_user_is_creating_another_account_with_previous_details.js"></script>
+    <script src="mobile_number_hashed_password_storage.js"></script>
+    <script src="strong_password.js"></script>
+    <script src="username_validation.js"></script>
+    <script src="no_recommendations.js"></script>
+    <script src="other_language_selection.js"></script>
+    <script src="age_validation.js"></script>
+  </head> 
+  <body>
+    <header>
+      <h1 class="header-text">Sign Up</h1>
+    </header>
+
+    <div class="hero">
+        <div class="content">
+            <p class="body-text">Start a new conversation today at Virtuality</p>
+        </div>
+    </div>
+
+   <div class="container">
+      <form class="sign_up_form" action="#" method="POST">
+        <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required minlength="6" maxlength="20" required pattern="[a-zA-Z0-9_-]+" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;"
+                  title="Username must contain at least one number, one uppercase letter, one lowercase letter, and be at least 6 to 20 characters long">
+        </div>
+
+        <div class="form-group">
+        <label for="username">Confirm Username</label>
+        <input type="text" id="confirm-username" name="confirm-username" required minlength="6" maxlength="20" required pattern="[a-zA-Z0-9_-]+" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;"
+                  oninput="checkUsernameMatch(this)"
+                  title="Please enter the same Username as above">
+        </div>
+
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Confirm Email</label>
+          <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;"
+                 oninput="checkEmailMatch(this)" 
+                 title="Please enter the same email address as above">
+        </div>
+
+    <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input-container">
+          <input type="password" id="password" name="password" required minlength="8" maxlength="20" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;"
+                 required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 title="Password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long">
+        <span id="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye"></i></span>
+        </div>
+    </div>
+        
+    <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required minlength="8" maxlength="20" class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false;"
+                 required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 title="Password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long">
+        <span id="toggle-confirm-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye"></i></span>
+        </div>
+        
+
+  <div class="area-code-container">
+    <label for="area-code">Area Code</label>
+    <select id="area-code" name="area-code" required>
+      <option value=""></option>
+      <option value="+93">Afghanistan (+93)</option>
+      <option value="+355">Albania (+355)</option>
+      <option value="+213">Algeria (+213)</option>
+      <option value="+1-684">American Samoa (+1-684)</option>
+      <option value="+376">Andorra (+376)</option>
+      <option value="+244">Angola (+244)</option>
+      <option value="+1-264">Anguilla (+1-264)</option>
+      <option value="+1-268">Antigua and Barbuda (+1-268)</option>
+      <option value="+54">Argentina (+54)</option>
+      <option value="+374">Armenia (+374)</option>
+      <option value="+297">Aruba (+297)</option>
+      <option value="+61">Australia (+61)</option>
+      <option value="+43">Austria (+43)</option>
+      <option value="+994">Azerbaijan (+994)</option>
+      <option value="+1-242">Bahamas (+1-242)</option>
+      <option value="+973">Bahrain (+973)</option>
+      <option value="+880">Bangladesh (+880)</option>
+      <option value="+1-246">Barbados (+1-246)</option>
+      <option value="+375">Belarus (+375)</option>
+      <option value="+32">Belgium (+32)</option>
+      <option value="+501">Belize (+501)</option>
+      <option value="+229">Benin (+229)</option>
+      <option value="+1-441">Bermuda (+1-441)</option>
+      <option value="+975">Bhutan (+975)</option>
+      <option value="+591">Bolivia (+591)</option>
+      <option value="+387">Bosnia and Herzegovina (+387)</option>
+      <option value="+267">Botswana (+267)</option>
+      <option value="+55">Brazil (+55)</option>
+      <option value="+246">British Indian Ocean Territory (+246)</option>
+      <option value="+1-284">British Virgin Islands (+1-284)</option>
+      <option value="+673">Brunei (+673)</option>
+      <option value="+359">Bulgaria (+359)</option>
+      <option value="+226">Burkina Faso (+226)</option>
+      <option value="+257">Burundi (+257)</option>
+      <option value="+855">Cambodia (+855)</option>
+      <option value="+237">Cameroon (+237)</option>
+      <option value="+1">Canada (+1)</option>
+      <option value="+238">Cape Verde (+238)</option>
+      <option value="+1-345">Cayman Islands (+1-345)</option>
+      <option value="+236">Central African Republic (+236)</option>
+      <option value="+235">Chad (+235)</option>
+      <option value="+56">Chile (+56)</option>
+      <option value="+86">China (+86)</option>
+      <option value="+61">Christmas Island (+61)</option>
+      <option value="+61">Cocos Islands (+61)</option>
+      <option value="+57">Colombia (+57)</option>
+      <option value="+269">Comoros (+269)</option>
+      <option value="+682">Cook Islands (+682)</option>
+      <option value="+506">Costa Rica (+506)</option>
+      <option value="+385">Croatia (+385)</option>
+      <option value="+53">Cuba (+53)</option>
+      <option value="+599">Curacao (+599)</option>
+      <option value="+357">Cyprus (+357)</option>
+      <option value="+420">Czech Republic (+420)</option>
+      <option value="+243">Democratic Republic of the Congo (+243)</option>
+      <option value="+45">Denmark (+45)</option>
+      <option value="+253">Djibouti (+253)</option>
+      <option value="+1767">Dominica (+1767)</option>
+      <option value="+1849">Dominican Republic (+1849)</option>
+      <option value="+593">Ecuador (+593)</option>
+      <option value="+20">Egypt (+20)</option>
+      <option value="+503">El Salvador (+503)</option>
+      <option value="+240">Equatorial Guinea (+240)</option>
+      <option value="+291">Eritrea (+291)</option>
+      <option value="+372">Estonia (+372)</option>
+      <option value="+251">Ethiopia (+251)</option>
+      <option value="+500">Falkland Islands (+500)</option>
+      <option value="+298">Faroe Islands (+298)</option>
+      <option value="+679">Fiji (+679)</option>
+      <option value="+358">Finland (+358)</option>
+      <option value="+33">France (+33)</option>
+      <option value="+594">French Guiana (+594)</option>
+      <option value="+689">French Polynesia (+689)</option>
+      <option value="+241">Gabon (+241)</option>
+      <option value="+220">Gambia (+220)</option>
+      <option value="+995">Georgia (+995)</option>
+      <option value="+49">Germany (+49)</option>
+      <option value="+233">Ghana (+233)</option>
+      <option value="+350">Gibraltar (+350)</option>
+      <option value="+30">Greece (+30)</option>
+      <option value="+299">Greenland (+299)</option>
+      <option value="+1473">Grenada (+1473)</option>
+      <option value="+590">Guadeloupe (+590)</option>
+      <option value="+1671">Guam (+1671)</option>
+      <option value="+502">Guatemala (+502)</option>
+      <option value="+224">Guinea (+224)</option>
+      <option value="+245">Guinea-Bissau (+245)</option>
+      <option value="+592">Guyana (+592)</option>
+      <option value="+509">Haiti (+509)</option>
+      <option value="+504">Honduras (+504)</option>
+      <option value="+852">Hong Kong (+852)</option>
+      <option value="+36">Hungary (+36)</option>
+      <option value="+354">Iceland (+354)</option>
+      <option value="+91">India (+91)</option>
+      <option value="+62">Indonesia (+62)</option>
+      <option value="+98">Iran (+98)</option>
+      <option value="+964">Iraq (+964)</option>
+      <option value="+353">Ireland (+353)</option>
+      <option value="+972">Israel (+972)</option>
+      <option value="+39">Italy (+39)</option>
+      <option value="+1876">Jamaica (+1876)</option>
+      <option value="+81">Japan (+81)</option>
+      <option value="+962">Jordan (+962)</option>
+      <option value="+7">Kazakhstan (+7)</option>
+      <option value="+254">Kenya (+254)</option>
+      <option value="+686">Kiribati (+686)</option>
+      <option value="+965">Kuwait (+965)</option>
+      <option value="+996">Kyrgyzstan (+996)</option>
+      <option value="+856">Laos (+856)</option>
+      <option value="+371">Latvia (+371)</option>
+      <option value="+961">Lebanon (+961)</option>
+      <option value="+266">Lesotho (+266)</option>
+      <option value="+231">Liberia (+231)</option>
+      <option value="+218">Libya (+218)</option>
+      <option value="+423">Liechtenstein (+423)</option>
+      <option value="+370">Lithuania (+370)</option>
+      <option value="+352">Luxembourg (+352)</option>
+      <option value="+853">Macau (+853)</option>
+      <option value="+389">Macedonia (+389)</option>
+      <option value="+261">Madagascar (+261)</option>
+      <option value="+265">Malawi (+265)</option>
+      <option value="+60">Malaysia (+60)</option>
+      <option value="+960">Maldives (+960)</option>
+      <option value="+223">Mali (+223)</option>
+      <option value="+356">Malta (+356)</option>
+      <option value="+692">Marshall Islands (+692)</option>
+      <option value="+596">Martinique (+596)</option>
+      <option value="+222">Mauritania (+222)</option>
+      <option value="+230">Mauritius (+230)</option>
+      <option value="+262">Mayotte (+262)</option>
+      <option value="+52">Mexico (+52)</option>
+      <option value="+691">Micronesia (+691)</option>
+      <option value="+373">Moldova (+373)</option>
+      <option value="+377">Monaco (+377)</option>
+      <option value="+976">Mongolia (+976)</option>
+      <option value="+382">Montenegro (+382)</option>
+      <option value="+1">Montserrat (+1)</option>
+      <option value="+212">Morocco (+212)</option>
+      <option value="+258">Mozambique (+258)</option>
+      <option value="+95">Myanmar (Burma) (+95)</option>
+      <option value="+264">Namibia (+264)</option>
+      <option value="+674">Nauru (+674)</option>
+      <option value="+977">Nepal (+977)</option>
+      <option value="+31">Netherlands (+31)</option>
+      <option value="+687">New Caledonia (+687)</option>
+      <option value="+64">New Zealand (+64)</option>
+      <option value="+505">Nicaragua (+505)</option>
+      <option value="+227">Niger (+227)</option>
+      <option value="+234">Nigeria (+234)</option>
+      <option value="+683">Niue (+683)</option>
+      <option value="+672">Norfolk Island (+672)</option>
+      <option value="+1">Northern Mariana Islands (+1)</option>
+      <option value="+47">Norway (+47)</option>
+      <option value="+968">Oman (+968)</option>
+      <option value="+92">Pakistan (+92)</option>
+      <option value="+680">Palau (+680)</option>
+      <option value="+970">Palestine (+970)</option>
+      <option value="+507">Panama (+507)</option>
+      <option value="+675">Papua New Guinea (+675)</option>
+      <option value="+595">Paraguay (+595)</option>
+      <option value="+51">Peru (+51)</option>
+      <option value="+63">Philippines (+63)</option>
+      <option value="+48">Poland (+48)</option>
+      <option value="+351">Portugal (+351)</option>
+      <option value="+1">Puerto Rico (+1)</option>
+      <option value="+974">Qatar (+974)</option>
+      <option value="+262">Réunion (+262)</option>
+      <option value="+40">Romania (+40)</option>
+      <option value="+250">Rwanda (+250)</option>
+      <option value="+590">Saint Barthélemy (+590)</option>
+      <option value="+290">Saint Helena (+290)</option>
+      <option value="+1">Saint Kitts and Nevis (+1)</option>
+      <option value="+1">Saint Lucia (+1758)</option>
+      <option value="+590">Saint Martin (+590)</option>
+      <option value="+508">Saint Pierre and Miquelon (+508)</option>
+      <option value="+1784">Saint Vincent and the Grenadines (+1784)</option>
+      <option value="+685">Samoa (+685)</option>
+      <option value="+378">San Marino (+378)</option>
+      <option value="+239">São Tomé and Príncipe (+239)</option>
+      <option value="+966">Saudi Arabia (+966)</option>
+      <option value="+221">Senegal (+221)</option>
+      <option value="+381">Serbia (+381)</option>
+      <option value="+248">Seychelles (+248)</option>
+      <option value="+232">Sierra Leone (+232)</option>
+      <option value="+65">Singapore (+65)</option>
+      <option value="+1721">Sint Maarten (+1721)</option>
+      <option value="+421">Slovakia (+421)</option>
+      <option value="+386">Slovenia (+386)</option>
+      <option value="+677">Solomon Islands (+677)</option>
+      <option value="+252">Somalia (+252)</option>
+      <option value="+27">South Africa (+27)</option>
+      <option value="+82">South Korea (+82)</option>
+      <option value="+211">South Sudan (+211)</option>
+      <option value="+34">Spain (+34)</option>
+      <option value="+94">Sri Lanka (+94)</option>
+      <option value="+249">Sudan (+249)</option>
+      <option value="+597">Suriname (+597)</option>
+      <option value="+47">Svalbard and Jan Mayen (+47)</option>
+      <option value="+268">Swaziland (+268)</option>
+      <option value="+46">Sweden (+46)</option>
+      <option value="+41">Switzerland (+41)</option>
+      <option value="+963">Syria (+963)</option>
+      <option value="+886">Taiwan (+886)</option>
+      <option value="+992">Tajikistan (+992)</option>
+      <option value="+255">Tanzania (+255)</option>
+      <option value="+66">Thailand (+66)</option>
+      <option value="+670">Timor-Leste (+670)</option>
+      <option value="+228">Togo (+228)</option>
+      <option value="+690">Tokelau (+690)</option>
+      <option value="+676">Tonga (+676)</option>
+      <option value="+1868">Trinidad and Tobago (+1868)</option>
+      <option value="+216">Tunisia (+216)</option>
+      <option value="+90">Turkey (+90)</option>
+      <option value="+993">Turkmenistan (+993)</option>
+      <option value="+1649">Turks and Caicos Islands (+1649)</option>
+      <option value="+688">Tuvalu (+688)</option>
+      <option value="+256">Uganda (+256)</option>
+      <option value="+380">Ukraine (+380)</option>
+      <option value="+971">United Arab Emirates (+971)</option>
+      <option value="+44">United Kingdom (+44)</option>
+      <option value="+1">United States (+1)</option>
+      <option value="+598">Uruguay (+598)</option>
+      <option value="+998">Uzbekistan (+998)</option>
+      <option value="+678">Vanuatu (+678)</option>
+      <option value="+379">Vatican City (+379)</option>
+      <option value="+58">Venezuela (+58)</option>
+      <option value="+84">Vietnam (+84)</option>
+      <option value="+1340">Virgin Islands, U.S. (+1340)</option>
+      <option value="+681">Wallis and Futuna (+681)</option>
+      <option value="+212">Western Sahara (+212)</option>
+      <option value="+967">Yemen (+967)</option>
+      <option value="+260">Zambia (+260)</option>
+      <option value="+263">Zimbabwe (+263)</option>
+    </select>
+
+    <div class="form-group">
+      <label for="mobile-number">Mobile Number</label>
+      <input type="text" id="mobile-number" name="mobile-number" pattern="^[+]?[0-9]{1,3}[-\s]?[(]?[0-9]{1,4}[)]?[-\s]?[0-9]{1,4}[-\s]?[0-9]{1,4}[-\s]?[0-9]{1,4}$" class="no-paste" autocomplete="off" required oncut="return false;" onpaste="return false;">
+  </div>
+
+  <div class="verification-options">
+    <input type="radio" id="verify-sms" name="verification-method" value="sms" checked required>
+    <label for="verify-sms">Verify with SMS Code</label>
+    <input type="radio" id="verify-email" name="verification-method" value="email">
+    <label for="verify-email">Verify with Email Code</label>
+  </div>
+
+  <script>
+    const smsRadio = document.getElementById('verify-sms');
+    const emailRadio = document.getElementById('verify-email');
+    const mobileInput = document.getElementById('mobile-number');
+    
+    smsRadio.addEventListener('change', () => {
+      if (mobileInput.checkValidity()) {
+        // Send SMS verification code
+      } else {
+        alert('Please enter a valid mobile number');
+        emailRadio.checked = true;
+      }
+    });
+    
+    emailRadio.addEventListener('change', () => {
+      if (mobileInput.checkValidity()) {
+        // Send Email verification code
+      } else {
+        alert('Please enter a valid email address');
+        smsRadio.checked = true;
+      }
+    });
+  </script>
+
+      <div class="form-group">
+        <label for="countryDropdown">Country/Location</label>
+        <select id="countryDropdown" required>
+          <option value="default">--Please select a Country or Location--</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="American Samoa">American Samoa</option>
+          <option value="Andorra">Andorra</option>
+          <option value="Angola">Angola</option>
+          <option value="Anguilla">Anguilla</option>
+          <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Armenia">Armenia</option>
+          <option value="Aruba">Aruba</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Azerbaijan">Azerbaijan</option>
+          <option value="Bahamas">Bahamas</option>
+          <option value="Bahrain">Bahrain</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Barbados">Barbados</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Belize">Belize</option>
+          <option value="Benin">Benin</option>
+          <option value="Bermuda">Bermuda</option>
+          <option value="Bhutan">Bhutan</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Brazil">Brazil</option>
+          <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+          <option value="British Virgin Islands">British Virgin Islands</option>
+          <option value="Brunei">Brunei</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Burkina Faso">Burkina Faso</option>
+          <option value="Burundi">Burundi</option>
+          <option value="Cambodia">Cambodia</option>
+          <option value="Cameroon">Cameroon</option>
+          <option value="Canada">Canada</option>
+          <option value="Cape Verde">Cape Verde</option>
+          <option value="Cayman Islands">Cayman Islands</option>
+          <option value="Central African Republic">Central African Republic</option>
+          <option value="Chad">Chad</option>
+          <option value="Chile">Chile</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Comoros">Comoros</option>
+          <option value="Cook Islands">Cook Islands</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Croatia">Croatia</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Curacao">Curacao</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="Democratic Republic of Congo">Democratic Republic of Congo</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Djibouti">Djibouti</option>
+          <option value="Dominica">Dominica</option>
+          <option value="Dominican Republic">Dominican Republic</option>
+          <option value="East Timor">East Timor</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="El Salvador">El Salvador</option>
+          <option value="Equatorial Guinea">Equatorial Guinea</option>
+          <option value="Eritrea">Eritrea</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Ethiopia">Ethiopia</option>
+          <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+          <option value="Faroe Islands">Faroe Islands</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+          <option value="French Guiana">French Guiana</option>
+          <option value="French Polynesia">French Polynesia</option>
+          <option value="French Southern Territories">French Southern Territories</option>
+          <option value="Gabon">Gabon</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Gibraltar">Gibraltar</option>
+          <option value="Greece">Greece</option>
+          <option value="Greenland">Greenland</option>
+          <option value="Grenada">Grenada</option>
+          <option value="Guadeloupe">Guadeloupe</option>
+          <option value="Guam">Guam</option>
+          <option value="Guatemala">Guatemala</option>
+          <option value="Guernsey">Guernsey</option>
+          <option value="Guinea">Guinea</option>
+          <option value="Guinea-Bissau">Guinea-Bissau</option>
+          <option value="Guyana">Guyana</option>
+          <option value="Haiti">Haiti</option>
+          <option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+          <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+          <option value="Honduras">Honduras</option>
+          <option value="Hong Kong">Hong Kong</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Iran">Iran</option>
+          <option value="Iraq">Iraq</option>
+          <option value="Ireland">Ireland</option>
+          <option value="Isle of Man">Isle of Man</option>
+          <option value="Israel">Israel</option>
+          <option value="Italy">Italy</option>
+          <option value="Ivory Coast">Ivory Coast</option>
+          <option value="Jamaica">Jamaica</option>
+          <option value="Japan">Japan</option>
+          <option value="Jersey">Jersey</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Kazakhstan">Kazakhstan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Kiribati">Kiribati</option>
+          <option value="Kosovo">Kosovo</option>
+          <option value="Kuwait">Kuwait</option>
+          <option value="Kyrgyzstan">Kyrgyzstan</option>
+          <option value="Laos">Laos</option>
+          <option value="Latvia">Latvia</option>
+          <option value="Lebanon">Lebanon</option>
+          <option value="Lesotho">Lesotho</option>
+          <option value="Liberia">Liberia</option>
+          <option value="Libya">Libya</option>
+          <option value="Liechtenstein">Liechtenstein</option>
+          <option value="Lithuania">Lithuania</option>
+          <option value="Luxembourg">Luxembourg</option>
+          <option value="Macau">Macau</option>
+          <option value="Macedonia">Macedonia</option>
+          <option value="Madagascar">Madagascar</option>
+          <option value="Malawi">Malawi</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Maldives">Maldives</option>
+          <option value="Mali">Mali</option>
+          <option value="Malta">Malta</option>
+          <option value="Marshall Islands">Marshall Islands</option>
+          <option value="Martinique">Martinique</option>
+          <option value="Mauritania">Mauritania</option>
+          <option value="Mauritius">Mauritius</option>
+          <option value="Mayotte">Mayotte</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Micronesia">Micronesia</option>
+          <option value="Moldova">Moldova</option>
+          <option value="Monaco">Monaco</option>
+          <option value="Mongolia">Mongolia</option>
+          <option value="Montenegro">Montenegro</option>
+          <option value="Morocco">Morocco</option>
+          <option value="Mozambique">Mozambique</option>
+          <option value="Myanmar">Myanmar</option>
+          <option value="Namibia">Namibia</option>
+          <option value="Nauru">Nauru</option>
+          <option value="Nepal">Nepal</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="New Caledonia">New Caledonia</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Nicaragua">Nicaragua</option>
+          <option value="Niger">Niger</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="Niue">Niue</option>
+          <option value="Norfolk Island">Norfolk Island</option>
+          <option value="North Macedonia">North Macedonia</option>
+          <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+          <option value="Norway">Norway</option>
+          <option value="Oman">Oman</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Palau">Palau</option>
+          <option value="Palestine">Palestine</option>
+          <option value="Panama">Panama</option>
+          <option value="Papua New Guinea">Papua New Guinea</option>
+          <option value="Paraguay">Paraguay</option>
+          <option value="Peru">Peru</option>
+          <option value="Philippines">Philippines</option>
+          <option value="Pitcairn">Pitcairn</option>
+          <option value="Poland">Poland</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Puerto Rico">Puerto Rico</option>
+          <option value="Qatar">Qatar</option>
+          <option value="Romania">Romania</option>
+          <option value="Rwanda">Rwanda</option>
+          <option value="Saint Barthelemy">Saint Barthelemy</option>
+          <option value="Saint Helena">Saint Helena</option>
+          <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+          <option value="Saint Lucia">Saint Lucia</option>
+          <option value="Saint Martin">Saint Martin</option>
+          <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+          <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+          <option value="Samoa">Samoa</option>
+          <option value="San Marino">San Marino</option>
+          <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+          <option value="Saudi Arabia">Saudi Arabia</option>
+          <option value="Senegal">Senegal</option>
+          <option value="Serbia">Serbia</option>
+          <option value="Seychelles">Seychelles</option>
+          <option value="Sierra Leone">Sierra Leone</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Sint Maarten">Sint Maarten</option>
+          <option value="Slovakia">Slovakia</option>
+          <option value="Slovenia">Slovenia</option>
+          <option value="Solomon Islands">Solomon Islands</option>
+          <option value="Somalia">Somalia</option>
+          <option value="South Africa">South Africa</option>
+          <option value="South Korea">South Korea</option>
+          <option value="South Sudan">South Sudan</option>
+          <option value="Spain">Spain</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+          <option value="Sudan">Sudan</option>
+          <option value="Suriname">Suriname</option>
+          <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+          <option value="Swaziland">Swaziland</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Syria">Syria</option>
+          <option value="Taiwan">Taiwan</option>
+          <option value="Tajikistan">Tajikistan</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Timor-Leste">Timor-Leste</option>
+          <option value="Togo">Togo</option>
+          <option value="Tokelau">Tokelau</option>
+          <option value="Tonga">Tonga</option>
+          <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+          <option value="Tunisia">Tunisia</option>
+          <option value="Turkey">Turkey</option>
+          <option value="Turkmenistan">Turkmenistan</option>
+          <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+          <option value="Tuvalu">Tuvalu</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="United Arab Emirates">United Arab Emirates</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="Uzbekistan">Uzbekistan</option>
+          <option value="Vanuatu">Vanuatu</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+          <option value="Wallis and Futuna">Wallis and Futuna</option>
+          <option value="Western Sahara">Western Sahara</option>
+          <option value="Yemen">Yemen</option>
+          <option value="Zambia">Zambia</option>
+          <option value="Zimbabwe">Zimbabwe</option>          
+        </select>
+      </div>
+
+      <div class="form-group" id="StateGroup">
+        <label for="State">State/Province/County/Division/Parish etc.</label>
+        <select id="State" required>
+          <option value=""></option>
+        </select>
+      </div>
+
+      <div class="form-group" id="LanguageGroup">
+        <label for="Language">Language</label>
+        <select id="Language" required>
+          <option value="default">--Please select a Language--</option>
+          <option value="Adamorobe Sign Language">Adamorobe Sign Language</option>
+          <option value="Adynamathanha">Adynamathanha</option>
+          <option value="Afghan Sign Language">Afghan Sign Language</option>
+          <option value="Afrikaans">Afrikaans</option>
+          <option value="Ainu">Ainu</option>
+          <option value="Akan">Akan</option>
+          <option value="Albanian">Albanian</option>
+          <option value="Albanian Sign Language">Albanian Sign Language</option>
+          <option value="Algerian Sign Language">Algerian Sign Language</option>
+          <option value="Alipur Sign Language">Alipur Sign Language</option>
+          <option value="Al-Sayyid Bedouin Sign Language">Al-Sayyid Bedouin Sign Language</option>
+          <option value="Amami Oshima Sign Language">Amami Oshima Sign Language</option>
+          <option value="American Sign Language">American Sign Language</option>
+          <option value="Amharic">Amharic</option>
+          <option value="Anindilyakwa">Anindilyakwa</option>
+          <option value="Antikirinya">Antikirinya</option>
+          <option value="Arabana">Arabana</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Arabic Sign Language">Arabic Sign Language</option>
+          <option value="Aramaic">Aramaic</option>
+          <option value="Argentine Sign Language">Argentine Sign Language</option>
+          <option value="Armenian">Armenian</option>
+          <option value="Armenian Sign Language">Armenian Sign Language</option>
+          <option value="Armenian Woman's Sign Language">Armenian Woman's Sign Language</option>
+          <option value="Arrernte">Arrernte</option>
+          <option value="Arrernte Sign Language">Arrernte Sign Language</option>
+          <option value="Assamese">Assamese</option>
+          <option value="Auslan">Auslan</option>
+          <option value="Aymara">Aymara</option>
+          <option value="Azerbaijani">Azerbaijani</option>
+          <option value="Azerbaijani Sign Language">Azerbaijani Sign Language</option>
+          <option value="Australian Sign Language">Australian Sign Language</option>
+          <option value="Austrian Sign Language">Austrian Sign Language</option>
+          <option value="Badimaya">Badimaya</option>
+          <option value="Bahasa Malaysia Kod Tangan">Bahasa Malaysian Kod Tangan</option>
+          <option value="Balochi">Balochi</option>
+          <option value="Bamako Sign Language">Bamako Sign Language</option>
+          <option value="Ban Khor Sign Language">Ban Khor Sign Language</option>
+          <option value="Bardi">Bardi</option>
+          <option value="Basque">Basque</option>
+          <option value="Batak">Batak</option>
+          <option value="Bay Islands Sign Language">Bay Islands Sign Language</option>
+          <option value="Belarusian">Belarusian</option>
+          <option value="Bengali">Bengali</option>
+          <option value="Berbey Sign Language">Berbey Sign Language</option>
+          <option value="Bhojpuri">Bhojpuri</option>
+          <option value="Bhutanese Sign Language">Bhutanese Sign Language</option>
+          <option value="Bolivian Sign Language">Bolivian Sign Language</option>
+          <option value="Bosnian">Bosnian</option>
+          <option value="Bouakako Sign Language">Bouakako Sign Language</option>
+          <option value="Brazilian Sign Language">Brazilian Sign Language</option>
+          <option value="Bribri Sign Language">Bribri Sign Language</option>
+          <option value="British Sign Language">British, Australian and New Zealand Sign Language</option>
+          <option value="Brunca Sign Language">Bruca Sign Language</option>
+          <option value="Bulgarian">Bulgarian</option>
+          <option value="Bulgarian Sign Language">Bulgarian Sign Language</option>
+          <option value="Bura Sign Language">Bura Sign Language</option>
+          <option value="Burkina Sign Language">Burkina Sign Language</option>
+          <option value="Burmese">Burmese</option>
+          <option value="Burmese Sign Language">Burmese Sign Language</option>
+          <option value="Cambodian Sign Language">Cambodian Sign Language</option>
+          <option value="Carhuahuaran Sign Language">Carhuahuaran Sign Language</option>
+          <option value="Catalan">Catalan</option>
+          <option value="Catalan Sign Language">Catalan Sign Language</option>
+          <option value="Cebuano">Cebuano</option>
+          <option value="Central Taurus Sign Language">Central Taurus Sign Language</option>
+          <option value="Chadian Sign Language">Chadian Sign Language</option>
+          <option value="Chatino Sign Language">Chatino Sign Language</option>
+          <option value="Chichewa">Chichewa</option>
+          <option value="Chilean Sign Language">Chilean Sign Language</option>
+          <option value="Chinese (Cantonese)">Chinese (Cantonese)</option>
+          <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+          <option value="Chinese Sign Language">Chinese Sign Language</option>
+          <option value="Colombian Sign Language">Colombian Sign Language</option>
+          <option value="Computer Braille Code">Computer Braille Code</option>
+          <option value="Costa Rican Sign Language">Costa Rican Sign Language</option>
+          <option value="Croatian">Croatian</option>
+          <option value="Croatian Sign Language">Croatian Sign Language</option>
+          <option value="Cuban Sign Language">Cuban Sign Language</option>
+          <option value="Cypriot Sign Language">Cypriot Sign Language</option>
+          <option value="Czech">Czech</option>
+          <option value="Czech Sign Language">Czech Sign Language</option>
+          <option value="Danish">Danish</option>
+          <option value="Danish Sign Language">Danish Sign Language</option>
+          <option value="Dari">Dari</option>
+          <option value="Dharawal">Dharawal</option>
+          <option value="Dhurga">Dhurga</option>  
+          <option value="Dhuwal">Dhuwal</option>
+          <option value="Dhuwala">Dhuwala</option>
+          <option value="Dinka">Dinka</option>
+          <option value="Djambarrpuyngu">Djambarrpuyngu</option>
+          <option value="Djapu">Djapu</option>
+          <option value="Dominican Sign Language">Dominican Sign Language</option>
+          <option value="Douentza Sign Language">Douentza Sign Language</option>
+          <option value="Dutch">Dutch</option>
+          <option value="Dutch Sign Language">Dutch Sign Language</option>
+          <option value="Ecuadorian Sign Language">Ecuadorian Sign Language</option>
+          <option value="Egyptian Sign Language">Egyptian Sign Language</option>
+          <option value="Emirati Sign Language">Emirati Sign Language</option>
+          <option value="Enga Sign Language">Enga Sign Language</option>
+          <option value="English">English</option>
+          <option value="Eritrean Sign Language">Eritrean Sign Language</option>
+          <option value="Estonian">Estonian</option>
+          <option value="Estonian Sign Language">Estonian Sign Language</option>
+          <option value="Eswatini Sign Language">Eswatini Sign Language</option>
+          <option value="Ethiopian Sign Language">Ethiopian Sign Language</option>
+          <option value="Farsi">Farsi</option>
+          <option value="Filipino">Filipino</option>
+          <option value="Filipino Sign Language">Filipino Sign Language</option>
+          <option value="Finnish">Finnish</option>
+          <option value="Finnish Sign Language">Finnish Sign Language</option>
+          <option value="Finland-Swedish Sign Language">Finland-Swedish Sign Language</option>
+          <option value="Flemish Sign Language">Flemish Sign Language</option>
+          <option value="Francophone African Sign Language">Francophone African Sign Language</option>
+          <option value="French">French</option>
+          <option value="French Sign Language">French Sign Language</option>
+          <option value="Frisian">Frisian</option>
+          <option value="Galician">Galician</option>
+          <option value="Gambian Sign Language">Gambian Sign Language</option>
+          <option value="Gamilaraay">Gamilaraay</option>
+          <option value="Ganggalida">Ganggalida</option>
+          <option value="Gebuno">Gebuno</option>
+          <option value="Georgian">Georgian</option>
+          <option value="Georgian Sign Language">Georgian Sign Language</option>
+          <option value="German">German</option>
+          <option value="German Sign Language">German Sign Language</option>
+          <option value="Ghanaian Sign Language">Ghanaian Sign Language</option>
+          <option value="Ghandruk Sign Language">Ghandruk Sign Language</option>
+          <option value="Ghardaia Sign Language">Ghardaia Sign Language</option>
+          <option value="Gija">Gija</option>
+          <option value="Gooniyandi">Gooniyandi</option>
+          <option value="Grade 1 Braille">Grade 1 Braille</option>
+          <option value="Grade 2 Braille">Grade 2 Braille</option>
+          <option value="Greek">Greek</option>
+          <option value="Greek Sign Language">Greek Sign Language</option>
+          <option value="Greenlandic Sign Language">Greenlandic Sign Language</option>
+          <option value="Guarani">Guarani</option>
+          <option value="Guatemalan Sign Language">Guatemalan Sign Language</option>
+          <option value="Guinea-Bissau Sign Language">Guinea-Bissau Sign Language</option>
+          <option value="Guinean Sign Language">Guinean Sign Language</option>
+          <option value="Gujarati">Gujarati</option>
+          <option value="Gumbaynggir">Gumbaynggir</option>
+          <option value="Guugu Yalandji">Guugu Yalandji</option>
+          <option value="Guugu Yimidhirr">Guugu Yimidhirr</option>
+          <option value="Guyanese Sign Language">Guyanese Sign Language</option>
+          <option value="Haida">Haida</option>
+          <option value="Haitian Creole">Haitian Creole</option>
+          <option value="Haitian Sign Language">Haitian Sign Language</option>
+          <option value="Hawai'i Sign Language">Hawai'i Sign Language</option>
+          <option value="Hausa">Hausa</option>
+          <option value="Hausa Sign Language">Hausa Sign Language</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Hmong">Hmong</option>
+          <option value="Honduras Sign Language">Honduras Sign Language</option>
+          <option value="Hong Kong Sign Language">Hong Kong Sign Language</option>
+          <option value="Huay Hai Sign Language">Huay Hai Sign Language</option>
+          <option value="Hungarian">Hungarian</option>
+          <option value="Hungarian Sign Language">Hungarian Sign Language</option>
+          <option value="Icelandic">Icelandic</option>
+          <option value="Icelandic Sign Language">Icelandic Sign Language</option>
+          <option value="Igbo">Igbo</option>
+          <option value="Indonesian">Indonesian</option>
+          <option value="Indo-Pakistani Sign Language">Indo-Pakistani Sign Language</option>
+          <option value="Inmaculada Sign Language">Inmaculada Sign Language</option>
+          <option value="Inuit Sign Language">Inuit Sign Language</option>
+          <option value="Inuktitut">Inuktitut</option>
+          <option value="Iraqi Sign Language">Iraqi Sign Language</option>
+          <option value="Irish">Irish</option>
+          <option value="Irish Sign Language">Irish Sign Language</option>
+          <option value="Israeli Sign Language">Israeli Sign Language</option>
+          <option value="Italian">Italian</option>
+          <option value="Italian Sign Language">Italian Sign Language</option>
+          <option value="Jakarta Sign Language">Jakarta Sign Language</option>
+          <option value="Jamaican Sign Language">Jamaican Sign Language</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Japanese Sign Language">Japanese Sign Language</option>
+          <option value="Javanese">Javanese</option>
+          <option value="Jhankot Sign Language">Jhankot Sign Language</option>
+          <option value="Jordanian Sign Language">Jordanian Sign Language</option>
+          <option value="Jumia Sign Language">Jumia Sign Language</option>
+          <option value="Ka'apor Sign Language">Ka'apor Sign Language</option>
+          <option value="Kaanju">Kaanju</option>
+          <option value="Kafr Qasem Sign Language">Kafr Qasem Sign Language</option>
+          <option value="Kailge Sign Language">Kailge Sign Language</option>
+          <option value="Kalmyk">Kalmyk</option>
+          <option value="Kajana Sign Language">Kajana Sign Language</option>
+          <option value="Kannada">Kannada</option>
+          <option value="Kata Kolok">Kata Kolok</option>
+          <option value="Kaurna">Kaurna</option>
+          <option value="Kayardild">Kayardild</option>
+          <option value="Kazakh">Kazakh</option>
+          <option value="Kenyan Sign Language">Kenyan Sign Language</option>
+          <option value="Keresan Sign Language">Keresan Sign Language</option>
+          <option value="Khmer">Khmer</option>
+          <option value="Khoekhoe">Khoekhoe</option>  
+          <option value="Kinyarwanda">Kinyarwanda</option>
+          <option value="Kirundi">Kirundi</option>
+          <option value="Korean">Korean</option>
+          <option value="Korean Sign Language">Korean Sign Language</option>
+          <option value="Kosovar Sign Language">Kosovar Sign Language</option>
+          <option value="Kriol (Torres Strait Creole)">Kriol (Torres Strait Creole)</option>
+          <option value="Kurdish">Kurdish</option>
+          <option value="Kurdish Sign Language">Kurdish Sign Language</option>
+          <option value="Kuuku Ya'u">Kuuku Ya'u</option>
+          <option value="Kuwaiti Sign Language">Kuwaiti Sign Language</option>
+          <option value="Kyrgyz">Kyrgyz</option>
+          <option value="Lakota">Lakota</option>
+          <option value="Lao">Lao</option>
+          <option value="Laotian Sign Language">Laotian Sign Language</option>
+          <option value="Lardil">Lardil</option>
+          <option value="Latin">Latin</option>
+          <option value="Latvian">Latvian</option>
+          <option value="Latvian Sign Language">Latvian Sign Language</option>
+          <option value="Lebanese Sign Language">Lebanese Sign Language</option>
+          <option value="Lesotho Sign Language">Lesotho Sign Language</option>
+          <option value="Libyan Sign Language">Libyan Sign Language</option>
+          <option value="Lithuanian">Lithuanian</option>
+          <option value="Lithuanian Sign Language">Lithuanian Sign Language</option>
+          <option value="Luritja">Luritja</option>
+          <option value="Luxembourgish">Luxembourgish</option>
+          <option value="Macau Sign Language">Macau Sign Language</option>
+          <option value="Macedonian">Macedonian</option>
+          <option value="Macedonian Sign Language">Macedonian Sign Language</option>
+          <option value="Macushi Sign Language">Macushi Sign Language</option>
+          <option value="Makaton">Makaton</option>
+          <option value="Malagasy">Malagasy</option>
+          <option value="Malagasy Sign Language">Malagasy Sign Language</option>
+          <option value="Malay">Malay</option>
+          <option value="Malayalam">Malayalam</option>
+          <option value="Malaysian Sign Language">Malaysian Sign Language</option>
+          <option value="Maltese">Maltese</option>
+          <option value="Maltese Sign Language">Maltese Sign Language</option>
+          <option value="Maori">Maori</option>
+          <option value="Marathi">Marathi</option>
+          <option value="Marajo Sign Language">Marajo Sign Language</option>
+          <option value="Mardin Sign Language">Mardin Sign Language</option>
+          <option value="Maritime Sign Language">Maritime Sign Language</option>
+          <option value="Maroua Sign Language">Maroua Sign Language</option>
+          <option value="Maunabudhuk-Bodhe Sign Language">Maunabudhuk-Bodhe Sign Language</option>
+          <option value="Mauritian Sign Language">Mauritian Sign Language</option>
+          <option value="Maxakali Sign Language">Maxakali Sign Language</option>
+          <option value="Mayan Sign Language">Mayan Sign Language</option>
+          <option value="Mbour Sign Language">Mbour Sign Language</option>
+          <option value="Mehek Sign Language">Mehek Sign Language</option>
+          <option value="Mexican Sign Language">Mexican Sign Language</option>
+          <option value="Miyakubo Sign Language">Miyakubo Sign Language</option>
+          <option value="Mofu-Gudur Sign Language">Mofu-Gudur Sign Language</option>
+          <option value="Mongolian">Mongolian</option>
+          <option value="Mongolian Sign Language">Mongolian Sign Language</option>
+          <option value="Moroccan Sign Language">Moroccan Sign Language</option>
+          <option value="Mount Avejaha Sign Language">Mount Avejaha Sign Language</option>
+          <option value="Mozambican Sign Language">Mozambican Sign Language</option>
+          <option value="Murrinh-Patha">Murrinh-Patha</option>
+          <option value="Music Braille">Music Braille</option>
+          <option value="Na Sai Sign Language">Na Sai Sign Language</option>
+          <option value="Naga Sign Language">Naga Sign Language</option>
+          <option value="Nahuatl">Nahuatl</option>
+          <option value="Namibian Sign Language">Namibian Sign Language</option>
+          <option value="Nanabin Sign Language">Nanabin Sign Language</option>
+          <option value="Navajo Sign Language">Navajo Sign Language</option>
+          <option value="Ndebele">Ndebele</option>
+          <option value="Ndjébbana">Ndjébbana</option>
+          <option value="Nemeth Braille">Nemeth Braille</option>
+          <option value="Nenets">Nenets</option>
+          <option value="Nepali">Nepali</option>
+          <option value="Nepali Sign Language">Nepali Sign Language</option>
+          <option value="New Zealand Sign Language">New Zealand Sign Language</option>
+          <option value="Ngaanyatjarra">Ngaanyatjarra</option>
+          <option value="Ngadjon">Ngadjon</option>
+          <option value="Ngarinyin">Ngarinyin</option>
+          <option value="Ngarrindjeri">Ngarrindjeri</option>
+          <option value="Ngiyampaa">Ngiyampaa</option>
+          <option value="Ngunawal">Ngunawal</option>
+          <option value="Nicaraguan Sign Language">Nicaraguan Sign Language</option>
+          <option value="Nigerian Sign Language">Nigerian Sign Language</option>
+          <option value="Noongar">Noongar</option>
+          <option value="Northern Ireland Sign Language">Northern Ireland Sign Language</option>
+          <option value="Norwegian">Norwegian</option>
+          <option value="Norwegian Sign Language">Norwegian Sign Language</option>
+          <option value="Nyangumarta">Nyangumarta</option>
+          <option value="Nyangatjatjara">Nyangatjatjara</option>
+          <option value="Nyawaygi">Nyawaygi</option>
+          <option value="Old Bangkok Sign Language">Old Bangkok Sign Language</option>
+          <option value="Old Cayman Sign Language">Old Cayman Sign Language</option>
+          <option value="Old Chiang Mai Sign Language">Old Chiang Mai Sign Language</option>
+          <option value="Omani Sign Language">Omani Sign Language</option>
+          <option value="Oriya">Oriya</option>
+          <option value="Oromo">Oromo</option>
+          <option value="Palestinian Sign Language">Palestinian Sign Language</option>
+          <option value="Panamanian Sign Language">Panamanian Sign Language</option>
+          <option value="Papiu Yanomama Sign Language">Papiu Yanomama Sign Language</option>
+          <option value="Papua New Guinean Sign Language">Papua New Guinean Sign Language</option>
+          <option value="Paraguayan Sign Language">Paraguayan Sign Language</option>
+          <option value="Pashto">Pashto</option>
+          <option value="Penang Sign Language">Penang Sign Language</option>
+          <option value="Persian Sign Language">Persian Sign Language</option>
+          <option value="Peruvian Sign Language">Peruvian Sign Language</option>
+          <option value="Pintupi">Pintupi</option>
+          <option value="Pitjantjatjara">Pitjantjatjara</option>
+          <option value="Plains Sign Language">Plains Sign Language</option>
+          <option value="Polish">Polish</option>
+          <option value="Polish Sign Language">Polish Sign Language</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Portuguese Sign Language">Portuguese Sign Language</option>
+          <option value="Providence Island Sign Language">Providence Island Sign Language</option>
+          <option value="Puerto Rican Sign Language">Puerto Rican Sign Language</option>
+          <option value="Punjabi">Punjabi</option>
+          <option value="Qahvehkhaneh Sign Language">Qahvehkhaneh Sign Language</option>
+          <option value="Qatari Unified Sign Language">Qatari Unified Sign Language</option>
+          <option value="Quebec Sign Language">Quebec Sign Language</option>
+          <option value="Quechua">Quechua</option>
+          <option value="Rennellese Sign Language">Rennellese Sign Language</option>
+          <option value="Rohingya">Rohingya</option>
+          <option value="Romanian">Romanian</option>
+          <option value="Romanian Sign Language">Romanian Sign Language</option>
+          <option value="Rossel Island Sign Language">Rossel Island Sign Language</option>
+          <option value="Russian">Russian</option>
+          <option value="Russian Sign Language">Russian Sign Language</option>
+          <option value="Rwandan Sign Language">Rwandan Sign Language</option>
+          <option value="Salvadoran Sign Language">Salvadoran Sign Language</option>
+          <option value="Sámi">Sámi</option>
+          <option value="Samoan">Samoan</option>
+          <option value="Samoan Sign Language">Samoan Sign Language</option>
+          <option value="Sao Tomé and Principe Sign Language">Sao Tomé and Principe Sign Language</option>
+          <option value="Saudi Sign Language">Saudi Sign Language</option>
+          <option value="Scots">Scots</option>
+          <option value="Scottish Gaelic">Scottish Gaelic</option>
+          <option value="Selangor Sign Language">Selangor Sign Language</option>
+          <option value="Seraglio Sign Language">Seraglio Sign Language</option>
+          <option value="Serbian">Serbian</option>
+          <option value="Sesotho">Sesotho</option>
+          <option value="Shona">Shona</option>
+          <option value="Sierra Leonean Sign Language">Sierra Leonean Sign Language</option>
+          <option value="Signalong">Signalong</option>
+          <option value="Signing Exact English (S.E.E.)">Signing Exact English (S.E.E.)</option>
+          <option value="Sinasina Sign Language">Sinasina Sign Language</option>
+          <option value="Sindhi">Sindhi</option>
+          <option value="Singapore Sign Language">Singapore Sign Language</option>
+          <option value="Sinhala">Sinhala</option>
+          <option value="Sivia Sign Language">Sivia Sign Language</option>
+          <option value="Slovak">Slovak</option>
+          <option value="Slovakian Sign Language">Slovakian Sign Language</option>
+          <option value="Slovenian">Slovenian</option>
+          <option value="Slovenian Sign Language">Slovenian Sign Language</option>
+          <option value="Solomon Islands Sign Language">Solomon Island Sign Language</option>
+          <option value="Somali">Somali</option>
+          <option value="Somali Sign Language">Somali Sign Language</option>
+          <option value="South African Sign Language">South African Sign Language</option>
+          <option value="South Rupununi Sign Language">South Rupununi Sign Language</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Spanish Sign Language">Spanish Sign Language</option>
+          <option value="Sri Lankan Sign Language">Sri Lankan Sign Language</option>
+          <option value="Sudanese">Sundanese</option>
+          <option value="Sudanese Sign Language">Sudanese Sign Language</option>
+          <option value="Swahili">Swahili</option>
+          <option value="Swazi">Swazi</option>
+          <option value="Swedish">Swedish</option>
+          <option value="Swedish Sign Language">Swedish Sign Language</option>
+          <option value="Swiss-French Sign Language">Swiss-French Sign Language</option>
+          <option value="Swiss-German Sign Language">Swiss-German Sign Language</option>
+          <option value="Swiss-Italian Sign Language">Swiss-Italian Sign Language</option>
+          <option value="Syrian Sign Language">Syrian Sign Language</option>
+          <option value="Tahitian">Tahitian</option>
+          <option value="Taiwanese Sign Language">Taiwanese Sign Language</option>
+          <option value="Tajik">Tajik</option>
+          <option value="Tamil">Tamil</option>
+          <option value="Tanzanian Sign Language">Tanzanian Sign Language</option>
+          <option value="Tatar">Tatar</option>
+          <option value="Tebul Sign Language">Tebul Sign Language</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Terena Sign Language">Terena Sign Language</option>
+          <option value="Thai">Thai</option>
+          <option value="Thai Sign Language">Thai Sign Language</option>
+          <option value="Tibetan Sign Language">Tibetan Sign Language</option>
+          <option value="Tigrinya">Tigrinya</option>
+          <option value="Tiwi">Tiwi</option>
+          <option value="Trinidad and Tobago Sign Language">Trinidad and Tobago Sign Language</option>
+          <option value="Tunisian Sign Language">Tunisian Sign Language</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Turkish Sign Language">Turkish Sign Language</option>
+          <option value="Turkmen">Turkmen</option>
+          <option value="Ugandan Sign Language">Ugandan Sign Language</option>
+          <option value="Uighur">Uighur</option>
+          <option value="Ukrainian">Ukrainian</option>
+          <option value="Ukrainian Sign Language">Ukrainian Sign Language</option>
+          <option value="Umpila">Umpila</option>
+          <option value="Umpila Sign Language">Umpila Sign Language</option>
+          <option value="Unified English Braille">Unified English Braille</option>
+          <option value="Urdu">Urdu</option>
+          <option value="Uruguayan Sign Language">Uruguayan Sign Language</option>
+          <option value="Uzbek">Uzbek</option>
+          <option value="Valencian Sign Language">Valencian Sign Language</option>
+          <option value="Venezuelan Sign Language">Venezuelan Sign Language</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Vietnamese Sign Language">Vietnamese Sign Language</option>
+          <option value="Walloon Sign Language">Walloon Sign Language</option>
+          <option value="Walmajarri">Walmajarri</option>
+          <option value="Wangaaypuwan">Wangaaypuwan</option>
+          <option value="Wanib Sign Language">Wanib Sign Language</option>
+          <option value="Warlmanpa">Warlmanpa</option>
+          <option value="Warlmanpa Sign Language">Warlmanpa Sign Language</option>
+          <option value="Warlpiri">Warlpiri</option>
+          <option value="Warlpiri Sign Language">Warlpiri Sign Language</option>
+          <option value="Warrgamay">Warrgamay</option>
+          <option value="Welsh">Welsh</option>
+          <option value="Wik-Mungkan">Wik-Mungkan</option>
+          <option value="Wiradjuri">Wiradjuri</option>
+          <option value="Xhosa">Xhosa</option>
+          <option value="Yakut">Yakut</option>
+          <option value="Yankunytjatjara">Yankunytjatjara</option>
+          <option value="Yawuru">Yawuru</option>
+          <option value="Yemeni Sign Language">Yemeni Sign Language</option>
+          <option value="Yiddish">Yiddish</option>
+          <option value="Yidiny">Yidiny</option>
+          <option value="Yindjibarndi">Yindjibarndi</option>
+          <option value="Yogyakarta Sign Language">Yogyakarta Sign Language</option>
+          <option value="Yolngu Matha">Yolngu Matha</option>
+          <option value="Yolngu Sign Language">Yolngu Sign Language</option>
+          <option value="Yoruba">Yoruba</option>
+          <option value="Yoruba Sign Language">Yoruba Sign Language</option>
+          <option value="Yugambeh">Yugambeh</option>
+          <option value="Yugoslav Sign Language">Yugoslav Sign Language</option>
+          <option value="Yumplatok (Torres Strait Islander)">Yumplatok (Torres Strait Islander)</option>
+          <option value="Zambian Sign Language">Zambian Sign Language</option>
+          <option value="Zimbabwean Sign Language">Zimbabwean Sign Language</option>
+          <option value="Zulu">Zulu</option>
+          <option value="Zulu Sign Language">Zulu Sign Language</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+     
+      <div class="form-group">
+        <label for="universityDropdown">Colleges/Universities</label>
+        <select id="universityDropdown" required>
+          <option value="default">--Please select a College or University--</option>
+        </select>
+      </div>
+      
+      <script src="universities.js"></script>
+
+      <div class="form-group" id="AgeGroup">
+        <label for="Age">Age</label>
+        <select id="Age" onchange="validateAge()" required>
+          <option value="default">--Please select your Age--</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+          <option value="32">32</option>
+          <option value="33">33</option>
+          <option value="34">34</option>
+          <option value="35">35</option>
+        </select>
+        <span id="ageError" style="display: none; color: red;">Age is required</span>
+      </div>
+
+      <div class="form-group" id="MonthGroup">
+        <label for="Month">Month</label>
+        <select id="Month" onchange="validateMonth()" required>
+          <option value="default">--Please select your Month--</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+        <span id="monthError" style="display: none; color: red;">Month is required</span>
+      </div>
+
+      <div class="form-group" id="BirthyearGroup">
+        <label for="Birthyear">Birthyear</label>
+        <select id="Birthyear" onchange="validateBirthyear()" required>
+          <option value="default">--Please select your Birthyear--</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1994">1994</option>
+          <option value="1993">1993</option>
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+          <option value="1989">1989</option>
+          <option value="1988">1988</option>
+        </select>
+        <span id="birthyearError" style="display: none; color: red;">Birthyear is required</span>
+      </div>
+
+      <div class="form-group" id="YearsofStudyGroup">
+        <label for="Years of Study">Years of Study</label>
+        <select id="Years of Study" required>
+          <option value="default">--Please select how many years you have studied--</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="relationship-status">Relationship Status</label>
+        <select id="relationship-status" name="relationship-status" required>
+          <option value="default">--Please select a Relationship Status--</option>  
+          <option value="single">Single</option>
+          <option value="in-relationship">In a Relationship</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+          <option value="recently divorced">Recently Divorced</option>
+          <option value="widowed">Widowed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="employment">Employment</label>
+        <select id="employment" name="employment" required>
+          <option value="default">--Please select your current employment status, or N/A--</option>
+          <option value="Full-Time">Full-Time</option>
+          <option value="Part-TIme">Part-Time</option>
+          <option value="Casual">Casual</option>
+          <option value="Contract">Contract</option>
+          <option value="Volunteer">Volunteer</option>
+          <option value="End of Year Hiree">End of Year Hiree</option>
+          <option value="Pensioner">Pensioner</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Redundant">Redundant</option>
+          <option value="Temporary">Temporary</option>
+          <option value="Fixed Term">Fixed Term</option>
+          <option value="Seasonal">Seasonal</option>
+          <option value="Intern">Intern</option>
+          <option value="Independent Contractor">Independent Contractor</option>
+          <option value="Outworker">Outworker</option>
+          <option value="Freelance">Freelance</option>
+          <option value="Probation">Probation</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="Apprenticeship">Apprenticeship</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="gym-sessions">Avg. Active Gym Sessions Per Week</label>
+        <input type="number" id="gym-sessions" name="gym-sessions" required>
+            
+      </div>
+
+      <div class="form-group">
+        <label for="drinking">Avg. Drinks Consumed Per Week</label>
+        <input type="number" id="drinking" name="drinking" required>
+      </div>
+
+      <div class="form-group">
+        <label for="smoking">Avg. Smoking Per Week</label>
+        <input type="number" id="smoking" name="smoking" required>
+      </div>
+
+      <div class="gender-group">
+        <label for="gender">Gender Identity</label>
+        <select id="gender" name="gender" required>
+            <option value="default">--Please select a Gender, or select Other--</option>
+            <option value="Intersex">Intersex</option>
+            <option value="Woman">Woman</option>
+            <option value="Trangender">Transgender</option>
+            <option value="Cisgender">Cisgender</option>
+            <option value="Polygender">Polygender</option>
+            <option value="Non-Binary">Non-Binary</option>
+            <option value="Trans">Trans</option>
+            <option value="Man">Man</option>
+            <option value="Agender">Agender</option>
+            <option value="Genderfluid">Genderfluid</option>
+            <option value="Bigender">Bigender</option>
+            <option value="Genderqueer">Genderqueer</option>
+            <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sexuality">Sexuality</label>
+        <select id="sexuality" name="sexuality" required>
+          <option value="default">--Please select your Sexuality, or select N/A--</option>  
+          <option value="Lesbian">Lesbian</option>
+          <option value="Asexual">Asexual</option> 
+          <option value="Gay">Gay</option> 
+          <option value="Skoliosexual">Skoliosexual</option>
+          <option value="Pansexual">Pansexual</option>
+          <option value="Heterosexual">Heterosexual</option>
+          <option value="Autosexual">Autosexual</option>
+          <option value="Bicurious">Bicurious</option>
+          <option value="Queer">Queer</option>
+          <option value="Multisexual">Multisexual</option>
+          <option value="Monosexual">Monosexual</option>
+          <option value="Androsexual">Androsexual</option>
+          <option value="Homosexual">Homosexual</option>
+          <option value="Demisexual">Demisexual</option>
+          <option value="Polysexual">Polysexual</option>
+          <option value="Allosexual">Allosexual</option>
+          <option value="Bisexual">Bisexual</option>
+          <option value="Other">Other</option>
+          <option value="Spectrasexual">Spectrasexual</option>
+          <option value="N/A">N/A</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="star-sign">Star Sign</label>
+        <select id="star-sign" name="star-sign" required>
+          <option value="default">--Please select your Star Sign, or select N/A</option>
+          <option value="Aries">Aries</option>
+          <option value="Taurus">Taurus</option>
+          <option value="Gemini">Gemini</option>
+          <option value="Cancer">Cancer</option>
+          <option value="Leo">Leo</option>
+          <option value="Virgo">Virgo</option>
+          <option value="Libra">Libra</option>
+          <option value="Scorpio">Scorpio</option>
+          <option value="Sagittarius">Sagittarius</option>
+          <option value="Capricorn">Capricorn</option>
+          <option value="Aquarius">Aquarius</option>
+          <option value="Pisces">Pisces</option>
+        </select>
+      </div>
+
+<p>By creating an account, you agree to our <a href="/Users/tomcasey/Documents/Coding/Website/Create_an_Account/terms_&_conditions.html" style="color:dodgerblue">Terms & Conditions</a>.</p>
+        <br>
+          <div class="registration-form"></div>
+          <button class="modern-button">Create Account</button>
+        </div>
+        </div>
+
+          <div class="back-button-container">
+            <a href="/Users/tomcasey/Documents/Coding/Website/Homepage/index.html" class="back-button">Back to Homepage</a>
+            <p>&copy; 2023 Virtuality - Thomas Casey (All Rights Reserved)</p>
+          </div>
+      </body>
+    </html>

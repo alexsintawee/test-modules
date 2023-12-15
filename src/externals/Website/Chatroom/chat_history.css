@@ -1,0 +1,10 @@
+.chat-history {
+    height: 1000px; 
+    width: 100%;
+    overflow-y: scroll; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  

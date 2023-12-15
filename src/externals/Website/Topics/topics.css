@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02199c;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  main {
+    margin-top: auto;
+  }
+
+.header-text {
+    color: #00b0fc;
+  }
+  
+  .body-text {
+    color: #00f2ff;
+  }
+  
+  header {
+    background-color: #00f7ff;
+    color: #00d5ff;
+    padding: 10px; 
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    background-color: #fff;
+    color: #f90000;
+  }
+
+  li[data-tooltip="Providing with the latest news and updates for your convenience"] .tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 9999;
+    display: none;
+  }
+  
+  li[data-tooltip="Providing with the latest news and updates for your convenience"]:hover .tooltip {
+    display: block;
+  }  
+
+  .hero {
+    background-image: url('/Users/tomcasey/Documents/Coding/Website/Images/phonebooth.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #263f00; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: aqua;
+    text-align: center; 
+    padding: 10px 50px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    text-shadow: aqua;
+    color: #32c0be;
+    align-items: end;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  :root {
+    --primary-color: #5e8955; 
+    --color: aqua;   
+  }
+  
+  
+  @media (max-width: 767px) {
+    .main-content {
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+    }
+  }
+  

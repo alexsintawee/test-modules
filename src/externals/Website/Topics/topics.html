@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation Topics</title>
+    <link rel="stylesheet" text="topics.css" href="topics.css"> 
+    <style>
+
+      /* Basic styling */
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('/Users/tomcasey/Documents/Coding/Website/Images/phonebooth.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 80px auto 10px;
+        width: fit-content;
+        color: #02e930;
+      }
+      ul {
+        list-style: none;
+        margin: 50px auto;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      li {
+        margin: 100px;
+        padding: 20px;
+        background-color: #deb1b1;
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conversation Topics</h1>
+    <ul>
+      <li data-tooltip="Providing with the latest news and updates for your convenience">Current Events</li>
+      <li>Politics</li>
+      <li>Entertainment</li>
+      <li>Sports</li>
+      <li>Technology</li>
+      <li>Travel</li>
+      <li>Food 
+      <li>Beverages</li>
+      <li>Relationships</li>
+      <li>Career</li>
+      <li>Education</li>
+      <li>Health</li>
+      <li>Environment</li>
+      <li>Art</li>
+      <li>Books</li>
+      <li>LGBTQIA Rights</li>
+      <li>Philosophy</li>
+      <li>Science</li>
+      <li>Country</li>
+      <li>Women's Rights</li>
+      <li>Business</li>
+      <li>Energy</li>
+      <li>Teaching 
+      <li>Education</li>
+      <li>Construction</li>
+      <li>Automotive</li>
+      <li>Media</li>
+      <li>Manufacturing</li>
+      <li>Transportation</li>
+      <li>Logistics</li>
+      <li>Aerospace</li>
+      <li>Agriculture
+      <li>Farming</li>
+      <li>Volunteering</li>
+      <li>NGO</li>
+      <li>Psychology</li>
+      <li>Fashion</li>
+      <li>Beauty
+      <li>Music
+      <li>Movies
+      <li>TV Shows</li>
+      <li>Gaming
+      <li>Fitness</li>
+      <li>Outdoor Acivities</li>
+      <li>Indoor Actvities</li>
+      <li>Cooking</li>
+      <li>Pets</li>
+      <li>Parenting</li>
+      <li>Technology Gadgets</li>
+      <li>Social Meda</li>
+      <li>Artificial Intelligence</li>
+      <li>Virtual Relity</li>
+      <li>Augmented eality</li>
+      <li>Blockchain</li>
+      <li>Real Estat</li>
+      <li>Travel Desinations</li>
+      <li>Nature</li>
+      <li>Space Exploration</li>
+      <li>Modern History</li>
+      <li>Mythology</li>
+      <li>Religion</li>
+      <li>Spirituality</li>
+      <li>Philanthropy</li>
+      <li>Humanitarinism</li>
+      <li>Social Justice</li>
+      <li>Environmentalism</li>
+      <li>Sustainabiity</li>
+      <li>Architecture</li>
+      <li>Interior Design</li>
+      <li>Landscape Design</li>
+      <li>Graphic Design</li>
+      <li>Web Design</li>
+      <li>User Experence</li>
+      <li>Product Deign</li>
+      <li>IndustrialDesign</li>
+      <li>Marketing</li>
+      <li>Advertisin</li>
+      <li>Public Reltions</li>
+      <li>Sales</li>
+      <li>Customer Service</li>
+      <li>Leadership</li>
+      <li>Teamwork</li>
+      <li>Data Science</li>      
+      <li>Productivity</li>
+      <li>Ancient History</li>
+      <li>Culture</li>
+      <li>Self-Improvement</li>
+      <li>Motivation</li>
+      <li>Startups</li>
+      <li>Entrepreneurship</li>
+      <li>Accounting</li>
+      <li>Engineering</li>
+      <li>Insurance</li>
+      <li>Healthcare</li>
+      <li>Pharmaceuticals</li>
+      <li>Biotech</li>
+      <li>Hospitality</li>
+      <li>Tourism</li>
+      <li>Aviation</li>
+      <li>Maritime</li>
+      <li>Mental Health</li>
+      <li>DIY</li>
+      <li>Home Improvement</li>
+      <li>Childcare</li>
+      <li>Morale</li>
+      <li>Language Learning</li>
+      <li>Performing Arts</li>
+      <li>Fine Arts</li>
+      <li>Photography</li>
+      <li>Writing</li>
+      <li>Society</li>
+      <li>Publishing</li>
+      <li>Sports Nutrition</li>
+      <li>Mindfulness</li>
+      <li>Meditation</li>
+      <li>Zoology</li>
+      <li>Astrology</li>
+      <li>Coffee</li>
+      <li>Personal Development</li>
+      <li>Renewable Energy</li>
+      <li>Social Entepreneurship</li>
+      <li>Project Management</li>
+      <li>Human Resources</li>
+      <li>Cross-Cultural Communication</li>
+      <li>Gender</li>
+      <li>Disability</li>
+      <li>Aging</li>
+      <li>Gerontology</li>
+      <li>Anthropology</li>
+      <li>Linguistics</li>
+      <li>Epistemology</li>
+      <li>Metaphysics</li>
+      <li>Logic</li>
+      <li>Ethics</li>
+      <li>Aesthetics</li>
+      <li>Animal Rights</li>
+      <li>Environmental Ethics</li>
+      <li>Moral</li>
+      <li>Career Development</li> 
+      <li>Job Searching</li>
+      <li>Self Care</li>
+      <li>Nutrition</li>
+      <li>Healthy Eating</li>
+      <li>Family</li>
+      <li>Decision Making</li>
+      <li>Elderly Care</li>
+      <li>Social Issues</li>
+      <li>Design History</li>
+      <li>Urban Planning</li>
+      <li>Sexuality</li>
+      <li>Globalizaton</li>
+      <li>International Relations</li>
+      <li>Health Technology</li>
+      <li>Video Games</li>
+      <li>Pop Culture</li>
+      <li>Agriculture Sustainability</li>
+      <li>Online Communities</li>
+      <li>Reporting</li>
+      <li>eSports</li>
+      <li>Accessibilty</li>
+      <li>Activism</li>
+      <li>Justice</li>
+      <li>Machine Learning</li>
+      <li>Hotel</li>
+      <li>Fitness Technology</li>
+      <li>Console Platforms</li>
+      <li>Robotics</li>
+      <li>Virtual Assistants</li>
+      <li>Waste</li>
+      <li>Online Learning</li>
+      <li>Marketplace</li>
+      <li>Disaster Response</li>
+      <li>Shopping</li>
+      <li>Homelessness</li>
+      </ul>
+
+<div id="tooltip"></div>
+
+<script src-="topics.js"></script>
+
+    <footer>
+        <div class="container">
+          <a href="/Users/tomcasey/Documents/Coding/Website/Homepage/index.html" class="back-button">Back to Homepage</a>
+          <p>&copy; 2023 Virtuality - Thomas Casey (All Rights Reserved)</p>
+        </div>
+      </footer>
+  </body>
+</html>
+
+

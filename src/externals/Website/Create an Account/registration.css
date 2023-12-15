@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  -webkit-autocomplete: off;
+  -moz-autocomplete: off;
+  -autocomplete: off;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: aqua;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.body-text {
+  font-size: 36px;
+  justify-content: center;
+  color: rgb(54, 254, 3)
+}
+
+header {
+  background-color: rgb(155, 191, 155);
+  color: #006330;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-text {
+  color: #333;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background-color: #5cdddf;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #cf78da;
+}
+
+.selected-text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+
+#area-code-input:focus {
+  outline: none;
+}
+
+#password {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#toggle-password {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#toggle-password i {
+  font-size: 1.2em;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #5d8f76;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  background-color: #e2e29b;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #16a9ed; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #666;
+}
+
+.hero {
+  background-image: url('/Users/tomcasey/Documents/Coding/Website/Images/phonebooth.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: rgb(119, 202, 30); 
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: middle;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  margin-bottom: 0; 
+}
+
+.modern-button {
+  background-color: var(--secondary-color);
+  border: none;
+  color: #a2fe03;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  bottom: 40; 
+  transform: translateY(0%); 
+  width: 100%; 
+}
+
+.modern-button:hover {
+  background-color: var(--secondary-color) 
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: aqua;
+  align-items: end;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.back-button-container {
+  position: static;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; 
+  color: aqua; 
+  text-align: center;
+  padding: 10px 50px;
+  transform: translateX(-20%);
+  transform: translateY(150%);
+  margin-top: auto;
+  width: 100%; 
+  left: 50%; 
+}
+
+:root {
+  --primary-color: #5e8955;
+  --secondary-color: #1a259b;
+}
+
+
+

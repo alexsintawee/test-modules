@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02199c;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  .message {
+    background-color: #e1ffc7;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+
+  .user-message {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+  }
+
+  #chat-output {
+    background-color: #4CAF50;
+}
+
+#notification {
+    display: none; 
+    color: red;
+    font-weight: bold;
+}
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: aqua; 
+  }
+
+  input[type="submit"]:focus {
+    outline: none; 
+  }
+
+  input[type="submit"] {
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; 
+  }
+
+  main {
+    margin-top: auto;
+  }
+
+  .header-text {
+    color: #00b0fc;
+  }
+  
+  .body-text {
+    color: #00f2ff;
+  }
+  
+  header {
+    background-color: #00f7ff;
+    color: #00d5ff;
+    padding: 10px; 
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    background-color: #fff;
+    color: #f90000;
+  }
+
+  .hero {
+    background-image: url('/Users/tomcasey/Documents/Coding/Website/Images/phonebooth.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #4CAF50; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  .content {
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: aqua;
+    text-align: center; 
+    padding: 10px 50px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .chat-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    text-shadow: aqua;
+    color: #32c0be;
+    align-items: end;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  :root {
+    --primary-color: #5e8955; 
+    --color: aqua;   
+  }
+  
+  
+  @media (max-width: 768px) {
+    .chat-container {
+      font-size: 14px;
+    }
+    .chat-history {
+      padding: 10px;
+    }
+  }
+  

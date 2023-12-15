@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Virtuality</title>
+  
+  <link rel="stylesheet" href="tailwind.css">
+  <link rel="stylesheet" href="output.css">
+
+  <style>
+    
+  </style>
+
+</head>
+
+<body>
+
+  <div class="link-container">
+    <a href="/Users/tomcasey/Documents/Coding/Website/About_Virtuality/countries.html" class="custom-link">
+      <h1>Online Users</h1>
+    </a>
+  
+    <a href="/Users/tomcasey/Documents/Coding/Website/About_Virtuality/about_virtuality.html" class="custom-link">
+      <h1>About Virtuality</h1>
+    </a>
+
+    <a href="/Users/tomcasey/Documents/Coding/Website/Create_an_Account/registration.html" class="custom-link">
+      <h1>Create an Account</h1>
+    </a>
+
+    <a href="/Users/tomcasey/Documents/Coding/Website/Create_an_Account/terms_&_conditions.html" class="custom-link">
+      <h1>Terms & Conditions</h1>
+    </a>
+
+    <a href="/Users/tomcasey/Documents/Coding/Website/Topics/topics.html" class="custom-link">
+      <h1>Topics</h1>
+    </a>
+
+  </div>
+  
+
+  <div class="container">
+    <h2>Welcome to Virtuality</h2>
+    <form action="http://localhost:8080/submit" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required class="no-paste" autocomplete="off" oncut="return false;" onpaste="return false">
+      <br>
+      <button type="submit">Login</button>
+    </form>
+
+    <script src="virtuality_homepage_react.js"></script>
+    
+    <script src="virtuality_login_password.js"></script>
+
+    <div id="phonebooth-full-container"></div>
+    <div id="phonebooth-container"></div>
+  </div>
+</body>
+
+</html>
