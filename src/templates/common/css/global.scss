@@ -1,29 +1,20 @@
-/*
- * Mobile layout
- */
-
-.{{module_name}}__wrapper {
-
-}
-
-
-/*
- * Tablet layout
- */
-
-@media screen and (min-width: $tablet){
+body {
     .{{module_name}}__wrapper {
+        .{{module_name}} {
+            &--wrapper {
+                &--container {
 
-    }
-}
+                }
+            }
+        }
+        /* Tablet layout */
+        @media only screen and (min-width: $tablet_min) and (max-width: $tablet_max)   {
 
+        }
 
-/*
- * Desktop layout
- */
+        /* Desktop layout */
+        @media screen and (max-width: $mobile){
 
-@media screen and (min-width: $desktop){
-    .{{module_name}}__wrapper {
-        
+        }
     }
 }

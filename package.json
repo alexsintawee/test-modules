@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --config webpack/webpack.prod.js --env minify=true",
-    "serve": "webpack serve --open --progress --config webpack/webpack.dev.js"
+    "serve": "webpack serve --open --progress --config webpack/webpack.dev.js",
+    "add-module": "bash scripts/add_module.sh",
+    "lint:js": "eslint \"./src/**/*.js\"",
+    "lint:styles": "stylelint \"./src/**/*.css\" \"./src/**/*.scss\" \"!./src/**/*.min.css\" \"!./src/templates/**/*.scss\""
   },
   "keywords": [],
   "author": "",
